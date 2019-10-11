@@ -3,6 +3,7 @@ using namespace std;
 int main() {
   float num1, num2, res;
   char oper;
+  
   cout << "enter number 1" << endl;
   cin >> num1;
   cout << "enter number 2" << endl;
