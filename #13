@@ -11,7 +11,7 @@ int main() {
   cout << "enter '+' or '-' or '*' or '/' " << endl;
   cin >> oper;
   
-  if (oper != '+' && oper != '-' && oper != '*' && oper != '/') {
+  while (oper != '+' && oper != '-' && oper != '*' && oper != '/') {
     cout << "enter '+' or '-' or '*' or '/' " << endl;
     cin >> oper;
   }   
