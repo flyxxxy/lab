@@ -21,13 +21,14 @@ int main() {
 	file.open(path, ios::in);
 	if (file) {
 
-	
-		file >> str;
-		for (int i = 0; i < str.length(); i++) {
-			s = i + 1;
-			d = i + 2;
-			if (str[i] == '.' && str[s] == '.' && str[d] == '.') {
-				el_am++;
+		while (!file.eof()) {
+			file >> str;
+			for (int i = 0; i < str.length(); i++) {
+				s = i + 1;
+				d = i + 2;
+				if (str[i] == '.' && str[s] == '.' && str[d] == '.') {
+					el_am++;
+				}
 			}
 		}
 	file.close();
