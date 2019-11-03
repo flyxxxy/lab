@@ -11,22 +11,30 @@ int main() {
 
 	cout << "Specify the full path to the text: " << endl;
 	cin >> path;
-	ifstream file(path.c_str());
 	R.open(path, ios::in);
 	if (R) {
 
 		while (!R.eof()) {
 
 			R >> z;
-			if (z == ',') {
-				cout << z << endl;
+			if (z == ','
+				|| z == '.' 
+				|| z == '-' 
+				|| z == '?' 
+				|| z == '"' 
+				|| z == '!' 
+				|| z == ';' 
+				|| z == ':' 
+				|| z == '...' 
+				|| z == '(' 
+				|| z == ')' ) {
 				n++;
 			}
 		}
 		R.close();
 
 		n == 0 ?
-			cout << '\n' << "There are no commas in the text" :
+			cout << '\n' << "There are no punctuation marks in the text" :
 			cout << '\n' << "Result: " << n;
 	}
 	else cout << "The file doesn't exist" << endl;
