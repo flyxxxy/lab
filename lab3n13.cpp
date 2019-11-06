@@ -26,9 +26,10 @@ int main() {
 				s = i + 1;
 				d = i + 2;
 				if (str[i] == '.' && str[s] == '.' && str[d] == '.') {
-					el_am++;
+					n++;
+					i += 2;
 				}
-				if (str[i] == ','
+				else if (str[i] == ','
 					|| str[i] == '.'
 					|| str[i] == '-'
 					|| str[i] == '?'
@@ -44,20 +45,13 @@ int main() {
 		}
 			file.close();
 		
-
-
 		if (n == 0) {
 			cout << '\n' << "There are no punctuation marks in the text";
 		}
-		else if (el_am == 0)
-			cout << '\n' << "Result: " << n;
 		else {
-			n = n - 2 * el_am;
 			cout << '\n' << "Result: " << n;
 		}
 	}
 	else cout << "The file doesn't exist" << endl;
 	return 0;
-
-
 }
