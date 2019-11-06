@@ -1,10 +1,10 @@
 #include <iostream>
 #include <fstream>
 
-
 using namespace std;
 
-int main() {
+void Punct_marks () {
+
 	int s = 0;
 	int d = 0;
 	string path;
@@ -40,15 +40,20 @@ int main() {
 				}
 			}
 		}
-			file.close();
-		
+		file.close();
+
 		if (n == 0) {
 			cout << '\n' << "There are no punctuation marks in the text";
 		}
 		else {
-			cout << '\n' << "Result: " << n;
+			cout <<'\n' << "Result: " << n;
 		}
 	}
 	else cout << "The file doesn't exist" << endl;
+}
+
+int main() {
+	
+	Punct_marks();
 	return 0;
 }
