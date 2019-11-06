@@ -9,7 +9,6 @@ int main() {
 	int d = 0;
 	string path;
 	fstream file;
-	char z;
 	string str;
 	int n = 0;
 	int el_am = 0;
@@ -19,8 +18,8 @@ int main() {
 	cout << "Specify the full path to the text: " << endl;
 	cin >> path;
 	file.open(path, ios::in);
-	if (file) {
 
+	if (file) {
 		while (!file.eof()) {
 			file >> str;
 			for (int i = 0; i < str.length(); i++) {
@@ -29,32 +28,23 @@ int main() {
 				if (str[i] == '.' && str[s] == '.' && str[d] == '.') {
 					el_am++;
 				}
+				if (str[i] == ','
+					|| str[i] == '.'
+					|| str[i] == '-'
+					|| str[i] == '?'
+					|| str[i] == '"'
+					|| str[i] == '!'
+					|| str[i] == ';'
+					|| str[i] == ':'
+					|| str[i] == '('
+					|| str[i] == ')') {
+					n++;
+				}
 			}
 		}
-	file.close();
-	}
+			file.close();
+		
 
-	file.open(path, ios::in);
-	if (file) {
-		while (!file.eof()) {
-
-			file >> z;
-			if (z == ','
-				|| z == '.'
-				|| z == '-'
-				|| z == '?'
-				|| z == '"'
-				|| z == '!'
-				|| z == ';'
-				|| z == ':'
-				|| z == '('
-				|| z == ')') {
-				z = 0;
-				n++;
-			}
-		}
-	
-	file.close();
 
 		if (n == 0) {
 			cout << '\n' << "There are no punctuation marks in the text";
@@ -68,5 +58,6 @@ int main() {
 	}
 	else cout << "The file doesn't exist" << endl;
 	return 0;
+
 
 }
