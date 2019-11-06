@@ -11,9 +11,6 @@ int main() {
 	fstream file;
 	string str;
 	int n = 0;
-	int el_am = 0;
-
-
 
 	cout << "Specify the full path to the text: " << endl;
 	cin >> path;
