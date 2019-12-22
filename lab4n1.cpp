@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <algorithm>
 #include <iterator>
@@ -10,8 +9,13 @@ using namespace std;
 int main() {
 	setlocale(LC_ALL, "ru");
 	int n;
+
+	cout << "Введите количество чисел в массиве: " << endl;
 	cin >> n;
+
 	int* arr = new int[n];
+
+	cout << "Введите числа массива: " << endl;
 	for (int i = 0; i < n; i++)
 		cin >> arr[i];
 
